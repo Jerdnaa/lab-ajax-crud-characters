@@ -1,4 +1,4 @@
-import axios from 'axios'
+// import axios from 'axios'
 
 class APIHandler {
   constructor (baseUrl) {
@@ -41,7 +41,7 @@ class APIHandler {
 
   async updateOneRegister (id, characterData) {
     try {
-      const response = await axios.put(`${this.BASE_URL}/characters/${id}`, characterData)
+      const response = await axios.patch(`${this.BASE_URL}/characters/${id}`, characterData)
       if (response.status === 200) {
         return response.data;
       }
